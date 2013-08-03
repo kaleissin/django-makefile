@@ -28,7 +28,7 @@ djangohelp:
 	$(PYTHON_BIN)/django-admin.py help $(DJANGO_POSTFIX)
 
 collectstatic:
-	$(PYTHON_BIN)/django-admin.py collectstatic --noinput $(DJANGO_POSTFIX)
+	$(PYTHON_BIN)/django-admin.py collectstatic -c --noinput $(DJANGO_POSTFIX)
 
 refresh:
 	touch src/$(PROJECT)/wsgi.py

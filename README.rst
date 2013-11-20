@@ -6,6 +6,7 @@ Makefile templates to aid in development and deployment of Django sites
                                                                                 
 Why Make?
 ---------                                                                                                                                                                     
+
 Because it's there.                                                             
                                                                                 
 Because calling commands from a file hosted with the rest of the source         
@@ -26,6 +27,9 @@ is easier to type than
     django-admin.py test --settings=someproject.settings.test --pythonpath=/path/to/project/src
 
 especially on the Monday the first working day after your vacation.
+
+Because ``fabric`` gave me indigestion.
+
 
 Deployment
 ----------
@@ -51,8 +55,15 @@ Currently I use a shell script, something along the lines of::
 This is not under version control since it needs to be updated per project, 
 per client machine, and per remote machine.
 
+
 Most Useful Targets
 -------------------
+
+cmd:
+    Runs any django command with production settings (in the CMD variable)
+
+refresh:
+    Touches the wsgi-file, thereby refreshing/reloading the site
 
 showenv:
     Dumps some relevant environment variables

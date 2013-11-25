@@ -64,8 +64,11 @@ compare:
 
 clean:
 	find . -name "*.pyc" -print0 | xargs -0 rm -rf
-	rm -rf htmlcov
-	rm -rf .coverage
+	-rm -rf htmlcov
+	-rm -rf .coverage
+	-rm -rf build
+	-rm -rf dist
+	-rm -rf src/*.egg-info
 
 test: clean virtual_env_set
 	-$(PYTHON_BIN)/coverage run $(LOCALPATH)/manage.py test $(DJANGO_TEST_POSTFIX)

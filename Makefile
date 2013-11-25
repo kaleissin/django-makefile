@@ -71,7 +71,7 @@ clean:
 	-rm -rf src/*.egg-info
 
 test: clean virtual_env_set
-	-$(PYTHON_BIN)/coverage run $(LOCALPATH)/manage.py test $(DJANGO_TEST_POSTFIX)
+	-$(PYTHON_BIN)/coverage run $(PYTHON_BIN)/django-admin.py test $(APP) $(DJANGO_TEST_POSTFIX)
 
 coverage: virtual_env_set
 	$(PYTHON_BIN)/coverage html --include="$(LOCALPATH)/*" --omit="*/admin.py,*/test*"

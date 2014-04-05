@@ -60,7 +60,7 @@ localcmd: virtual_env_set
 	$(PYTHON_BIN)/django-admin.py $(CMD) $(DJANGO_LOCAL_POSTFIX)
 
 refresh:
-	touch src/$(PROJECT)/wsgi.py
+	touch src/$(PROJECT)/*wsgi.py
 
 rsync:
 	rsync -avz --checksum --exclude-from .gitignore --exclude-from .rsyncignore . ${REMOTE_URI}

@@ -3,11 +3,11 @@ SHELL := /bin/sh
 # SET THIS! Directory containing wsgi.py
 # PROJECT := someproject
 
-LOCALPATH := $(CURDIR)/src
+LOCALPATH := ./src
 PYTHONPATH := $(LOCALPATH)/
 SETTINGS := production
 DJANGO_SETTINGS_MODULE = $(PROJECT).settings.$(SETTINGS)
-DJANGO_POSTFIX := --settings=$(DJANGO_SETTINGS_MODULE) --pythonpath=.$(PYTHONPATH)
+DJANGO_POSTFIX := --settings=$(DJANGO_SETTINGS_MODULE) --pythonpath=$(PYTHONPATH)
 LOCAL_SETTINGS := local
 DJANGO_LOCAL_SETTINGS_MODULE = $(PROJECT).settings.$(LOCAL_SETTINGS)
 DJANGO_LOCAL_POSTFIX := --settings=$(DJANGO_LOCAL_SETTINGS_MODULE) --pythonpath=$(PYTHONPATH)
